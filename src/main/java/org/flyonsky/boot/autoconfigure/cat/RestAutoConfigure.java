@@ -8,14 +8,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
-@ConditionalOnClass({RestTemplate.class})
 @ConditionalOnBean({RestTemplate.class})
 public class RestAutoConfigure {
 	private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
