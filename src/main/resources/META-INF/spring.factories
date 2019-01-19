@@ -1,3 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 org.flyonsky.boot.autoconfigure.cat.CatServletAutoConfigure,\
-org.flyonsky.boot.autoconfigure.cat.RestAutoConfigure
+org.flyonsky.boot.autoconfigure.cat.RestAutoConfigure,\
+org.flyonsky.boot.autoconfigure.cat.CatAspectAutoConfigure
