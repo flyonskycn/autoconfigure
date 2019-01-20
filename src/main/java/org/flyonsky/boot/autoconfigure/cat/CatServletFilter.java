@@ -28,7 +28,7 @@ public class CatServletFilter implements Filter{
 
         String uri = request.getRequestURI();
 
-        //若header中有context相关属性，则生成调用链，若无，仅统计请求的Transaction
+        //鑻eader涓湁context鐩稿叧灞炴�э紝鍒欑敓鎴愯皟鐢ㄩ摼锛岃嫢鏃狅紝浠呯粺璁¤姹傜殑Transaction
         if(null != request.getHeader(CatConstantsExt.CAT_HTTP_HEADER_ROOT_MESSAGE_ID)){
             CatContext catContext = new CatContext();
             catContext.addProperty(Cat.Context.ROOT,request.getHeader(CatConstantsExt.CAT_HTTP_HEADER_ROOT_MESSAGE_ID));
