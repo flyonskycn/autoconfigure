@@ -17,6 +17,7 @@ import org.springframework.context.annotation.Configuration;
 import com.ctrip.framework.apollo.Config;
 import com.ctrip.framework.apollo.spring.boot.ApolloAutoConfiguration;
 import com.ctrip.framework.apollo.spring.config.PropertySourcesConstants;
+import com.netflix.config.ConfigurationManager;
 
 @ConditionalOnClass({Config.class})
 @ConditionalOnProperty({PropertySourcesConstants.APOLLO_BOOTSTRAP_ENABLED})
@@ -27,17 +28,19 @@ public class ArchaiousAutoConfigure {
 
 	@Autowired
 	public void initArchaious(ApolloIdProperties apolloId, ApolloProperties apollo) {
-		String[] apolloUrls = StringUtils.split(apollo.getMeta(), ArchaiousConstants.ARCHAIUS_SEPARATOR);
-		String[] nameSpaces = StringUtils.split(apollo.getBootstrap().getNamespaces(), ArchaiousConstants.ARCHAIUS_SEPARATOR);
-		Set<String> archaiousUrlList = new LinkedHashSet<String>();
-		String url = "";
-		for(String ap : apolloUrls) {
-			for(String nameSpace : nameSpaces) {
-				url = MessageFormat.format(ArchaiousConstants.ARCHAIUS_APOLLO_URL_TEMPLATE, ap, apolloId.getId(), apollo.getCluster(), nameSpace);
-				archaiousUrlList.add(url);
-			}
-		}
-		String archaiousUrl = StringUtils.join(archaiousUrlList, ArchaiousConstants.ARCHAIUS_SEPARATOR);
-		System.setProperty(ArchaiousConstants.ARCHAIUS_ADD_ITIONAL_URLS, archaiousUrl);
+//		String[] apolloUrls = StringUtils.split(apollo.getMeta(), ArchaiousConstants.ARCHAIUS_SEPARATOR);
+//		String[] nameSpaces = StringUtils.split(apollo.getBootstrap().getNamespaces(), ArchaiousConstants.ARCHAIUS_SEPARATOR);
+//		Set<String> archaiousUrlList = new LinkedHashSet<String>();
+//		String url = "";
+//		for(String ap : apolloUrls) {
+//			for(String nameSpace : nameSpaces) {
+//				url = MessageFormat.format(ArchaiousConstants.ARCHAIUS_APOLLO_URL_TEMPLATE, ap, apolloId.getId(), apollo.getCluster(), nameSpace);
+//				archaiousUrlList.add(url);
+//			}
+//		}
+//		String archaiousUrl = StringUtils.join(archaiousUrlList, ArchaiousConstants.ARCHAIUS_SEPARATOR);
+//		System.setProperty(ArchaiousConstants.ARCHAIUS_ADD_ITIONAL_URLS, archaiousUrl);
+		Set<String> set = ConfigurationManager.getLoadedPropertiesURLs();
+		System.out.println(set);
 	}
 }
