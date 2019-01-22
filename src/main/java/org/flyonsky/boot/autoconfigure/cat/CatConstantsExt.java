@@ -4,7 +4,7 @@ import com.dianping.cat.CatConstants;
 
 public class CatConstantsExt extends CatConstants{
     /**
-     * Type ³£Á¿
+     * Type å…³é”®å­—
      */
     public static final String Type_URL_METHOD = "URL.method";
     public static final String Type_URL_CLIENT = "URL.client";
@@ -27,7 +27,7 @@ public class CatConstantsExt extends CatConstants{
     public static final String Type_Call_CLIENT = "Call.client";
 
     /**
-     * http header ³£Á¿
+     * http header å…³é”®å­—
      */
     public static final String CAT_HTTP_HEADER_ROOT_MESSAGE_ID = "X-CAT-ROOT-MESSAGE-ID";
     public static final String CAT_HTTP_HEADER_PARENT_MESSAGE_ID = "X-CAT-ROOT-PARENT-ID";

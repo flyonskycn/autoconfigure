@@ -13,6 +13,9 @@
   	<spring.verison>5.0.11.RELEASE</spring.verison>
   	<servlet.version>4.0.1</servlet.version>
   	<slf4j.version>1.7.25</slf4j.version>
+  	<apollo.version>1.2.0</apollo.version>
+  	<archaius.version>0.7.6</archaius.version>
+  	<commons.lang.version>3.8.1</commons.lang.version>
   </properties>
   
   <dependencies>
@@ -79,6 +82,27 @@
     	<scope>compile</scope>
       	<optional>true</optional>
     </dependency>
+    <dependency>
+    	<groupId>com.ctrip.framework.apollo</groupId>
+    	<artifactId>apollo-client</artifactId>
+    	<version>${apollo.version}</version>
+    	<scope>compile</scope>
+      	<optional>true</optional>
+    </dependency>
+    <dependency>
+    	<groupId>com.netflix.archaius</groupId>
+    	<artifactId>archaius-core</artifactId>
+    	<version>${archaius.version}</version>
+    	<scope>compile</scope>
+      	<optional>true</optional>
+    </dependency>
+    <dependency>
+	    <groupId>org.apache.commons</groupId>
+	    <artifactId>commons-lang3</artifactId>
+	    <version>${commons.lang.version}</version>
+	    <scope>compile</scope>
+	    <optional>true</optional>
+	</dependency>
   </dependencies>
   
   <build>

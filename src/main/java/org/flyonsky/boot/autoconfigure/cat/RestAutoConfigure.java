@@ -20,7 +20,7 @@ public class RestAutoConfigure {
 
 	@Autowired
 	public void createRestTemplate(RestTemplate restTemplate) {
-		// 保存和传递调用链上下文
+		// 璁剧疆Cat 涓婁笅鏂囨嫤鎴櫒
 		restTemplate.setInterceptors(Collections.singletonList(new CatRestInterceptor()));
 		
 		restTemplate.setErrorHandler(new DefaultResponseErrorHandler() {

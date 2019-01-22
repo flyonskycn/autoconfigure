@@ -24,14 +24,14 @@ public class CatRestInterceptor implements ClientHttpRequestInterceptor {
 		try {
 			HttpHeaders headers = request.getHeaders();
 
-			// CatÉÏÏÂÎÄs
+			// Catä¸Šä¸‹æ–‡
 			Context ctx = new CatContext();
 			Cat.logRemoteCallClient(ctx);
 			headers.add(CatConstantsExt.CAT_HTTP_HEADER_ROOT_MESSAGE_ID, ctx.getProperty(Cat.Context.ROOT));
 			headers.add(CatConstantsExt.CAT_HTTP_HEADER_PARENT_MESSAGE_ID, ctx.getProperty(Cat.Context.PARENT));
 			headers.add(CatConstantsExt.CAT_HTTP_HEADER_CHILD_MESSAGE_ID, ctx.getProperty(Cat.Context.CHILD));
 
-			// Ö´ÐÐÕý³£µÄÂß¼­
+			// ç»§æ‰¿æ‰§è¡Œé€»è¾‘
 			ClientHttpResponse response =  execution.execute(request, body);
 			t.setStatus(Transaction.SUCCESS);
 			return response;
