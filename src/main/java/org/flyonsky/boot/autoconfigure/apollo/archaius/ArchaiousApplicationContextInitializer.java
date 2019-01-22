@@ -13,7 +13,11 @@ import org.springframework.core.env.ConfigurableEnvironment;
 
 import com.ctrip.framework.apollo.core.ConfigConsts;
 import com.ctrip.framework.apollo.spring.config.PropertySourcesConstants;
+import com.netflix.config.ConcurrentCompositeConfiguration;
 import com.netflix.config.ConfigurationManager;
+import com.netflix.config.DynamicPropertyFactory;
+import com.netflix.config.DynamicURLConfiguration;
+import com.netflix.config.sources.URLConfigurationSource;
 
 public class ArchaiousApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext>{
 	
@@ -35,24 +39,28 @@ public class ArchaiousApplicationContextInitializer implements ApplicationContex
 	}
 	
 	protected void initialize(ConfigurableEnvironment environment) {
-		String apolloMeta = environment.getProperty(ConfigConsts.APOLLO_META_KEY, "http://localhost:10000");
-		String[] apolloUrls = StringUtils.split(apolloMeta, ArchaiousConstants.ARCHAIUS_SEPARATOR);
-		String apolloNameSpace = environment.getProperty(PropertySourcesConstants.APOLLO_BOOTSTRAP_NAMESPACES,ConfigConsts.NAMESPACE_APPLICATION);
-		String[] nameSpaces = StringUtils.split(apolloNameSpace, ArchaiousConstants.ARCHAIUS_SEPARATOR);
-		String appid = environment.getProperty(ArchaiousConstants.APOLLO_APP_ID,"test");
-		String cluster = environment.getProperty(ConfigConsts.APOLLO_CLUSTER_KEY,ConfigConsts.CLUSTER_NAME_DEFAULT);
-		Set<String> archaiousUrlList = new LinkedHashSet<String>();
-		String url = "";
-		for(String ap : apolloUrls) {
-			for(String nameSpace : nameSpaces) {
-				url = MessageFormat.format(ArchaiousConstants.ARCHAIUS_APOLLO_URL_TEMPLATE, ap, appid, cluster, nameSpace);
-				archaiousUrlList.add(url);
-			}
-		}
-		String archaiousUrl = StringUtils.join(archaiousUrlList, ArchaiousConstants.ARCHAIUS_SEPARATOR);
-		System.setProperty(ArchaiousConstants.ARCHAIUS_ADD_ITIONAL_URLS, archaiousUrl);
-		Set<String> set = ConfigurationManager.getLoadedPropertiesURLs();
-		logger.info("ContextInitializer");
-		logger.info(String.valueOf(set));
+//		String apolloMeta = environment.getProperty(ConfigConsts.APOLLO_META_KEY, "http://localhost:10000");
+//		String[] apolloUrls = StringUtils.split(apolloMeta, ArchaiousConstants.ARCHAIUS_SEPARATOR);
+//		String apolloNameSpace = environment.getProperty(PropertySourcesConstants.APOLLO_BOOTSTRAP_NAMESPACES,ConfigConsts.NAMESPACE_APPLICATION);
+//		String[] nameSpaces = StringUtils.split(apolloNameSpace, ArchaiousConstants.ARCHAIUS_SEPARATOR);
+//		String appid = environment.getProperty(ArchaiousConstants.APOLLO_APP_ID,"test");
+//		String cluster = environment.getProperty(ConfigConsts.APOLLO_CLUSTER_KEY,ConfigConsts.CLUSTER_NAME_DEFAULT);
+//		Set<String> archaiousUrlList = new LinkedHashSet<String>();
+//		String url = "";
+//		for(String ap : apolloUrls) {
+//			for(String nameSpace : nameSpaces) {
+//				url = MessageFormat.format(ArchaiousConstants.ARCHAIUS_APOLLO_URL_TEMPLATE, ap, appid, cluster, nameSpace);
+//				archaiousUrlList.add(url);
+//			}
+//		}
+//		logger.info(String.valueOf(ConfigurationManager.isConfigurationInstalled()));
+//		String archaiousUrl = StringUtils.join(archaiousUrlList, ArchaiousConstants.ARCHAIUS_SEPARATOR);
+//		System.setProperty(URLConfigurationSource.CONFIG_URL, archaiousUrl);
+//		DynamicPropertyFactory.getInstance();
+//		
+//		logger.info(String.valueOf(ConfigurationManager.isConfigurationInstalled()));
+//		Set<String> set = ConfigurationManager.getLoadedPropertiesURLs();
+//		logger.info("ContextInitializer");
+//		logger.info(String.valueOf(set));
 	}
 }
