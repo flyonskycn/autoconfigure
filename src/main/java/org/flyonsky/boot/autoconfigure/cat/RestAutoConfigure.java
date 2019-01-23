@@ -1,6 +1,7 @@
 package org.flyonsky.boot.autoconfigure.cat;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -8,7 +9,8 @@ import org.springframework.web.client.RestTemplate;
 import com.dianping.cat.Cat.Context;
 
 @Configuration
-@ConditionalOnBean({RestTemplate.class, Context.class})
+@ConditionalOnClass({Context.class})
+@ConditionalOnBean({RestTemplate.class})
 public class RestAutoConfigure {
 
 	@Bean
