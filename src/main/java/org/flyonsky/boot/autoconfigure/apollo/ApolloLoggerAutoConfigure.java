@@ -21,7 +21,7 @@ import com.ctrip.framework.apollo.spring.annotation.ApolloConfigChangeListener;
 import com.ctrip.framework.apollo.spring.config.PropertySourcesConstants;
 
 /**
- * ¶¯Ì¬¸üĞÂÈÕÖ¾¼¶±ğ
+ * åŠ¨æ€æ›´æ–°æ—¥å¿—çº§åˆ«
  * @author Administrator
  *
  */

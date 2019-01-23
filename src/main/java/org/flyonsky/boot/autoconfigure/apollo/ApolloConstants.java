@@ -3,17 +3,17 @@ package org.flyonsky.boot.autoconfigure.apollo;
 public class ApolloConstants {
 
 	/**
-	 * apollo APPIDÅäÖÃÇ°×º
+	 * apollo APPIDå‰ç¼€
 	 */
 	public static final String APP_PREFIX = "app";
 	
 	/**
-	 * apollo ÅäÖÃÇ°×º
+	 * apollo å‰ç¼€
 	 */
 	public static final String CONFIG_PREFIX = "apollo";
 	
 	/**
-	 * apollo ¶à¸öÅäÖÃÏîÖµÖ®¼äµÄ·Ö¸ô·û
+	 * apollo å¤šä¸ªé…ç½®å€¼ä¹‹é—´çš„åˆ†éš”ç¬¦
 	 */
 	public static final String APOLLO_SEPARATOR = ",";
 }
