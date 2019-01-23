@@ -2,7 +2,7 @@ package org.flyonsky.boot.autoconfigure.apollo;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix="app")
+@ConfigurationProperties(prefix=ApolloConstants.APP_PREFIX)
 public class ApolloIdProperties {
 
 	private String id;

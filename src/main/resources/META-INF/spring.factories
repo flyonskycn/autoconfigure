@@ -1,5 +1,4 @@
 org.springframework.context.ApplicationContextInitializer=\
-org.flyonsky.boot.autoconfigure.apollo.archaius.ArchaiousApplicationContextInitializer
 
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 org.flyonsky.boot.autoconfigure.cat.CatServletAutoConfigure,\

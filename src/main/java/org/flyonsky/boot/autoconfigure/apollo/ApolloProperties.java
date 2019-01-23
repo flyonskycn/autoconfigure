@@ -2,10 +2,12 @@ package org.flyonsky.boot.autoconfigure.apollo;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix="apollo")
+import com.ctrip.framework.apollo.core.ConfigConsts;
+
+@ConfigurationProperties(prefix=ApolloConstants.CONFIG_PREFIX)
 public class ApolloProperties {
 
-	private String cluster = "default";
+	private String cluster = ConfigConsts.CLUSTER_NAME_DEFAULT;
 	
 	private String meta;
 	
