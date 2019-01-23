@@ -5,8 +5,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
+import com.dianping.cat.Cat.Context;
+
 @Configuration
-@ConditionalOnBean({RestTemplate.class})
+@ConditionalOnBean({RestTemplate.class, Context.class})
 public class RestAutoConfigure {
 
 	@Bean
