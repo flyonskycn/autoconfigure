@@ -20,6 +20,11 @@ import com.ctrip.framework.apollo.spring.annotation.ApolloConfig;
 import com.ctrip.framework.apollo.spring.annotation.ApolloConfigChangeListener;
 import com.ctrip.framework.apollo.spring.config.PropertySourcesConstants;
 
+/**
+ * 动态更新日志级别
+ * @author Administrator
+ *
+ */
 @ConditionalOnProperty({PropertySourcesConstants.APOLLO_BOOTSTRAP_ENABLED})
 @Configuration
 public class ApolloLoggerAutoConfigure {
@@ -27,7 +32,7 @@ public class ApolloLoggerAutoConfigure {
 	@Component
 	public static class LoggerLevelRefresher implements ApplicationContextAware{
 		
-		private static final String LOG_PREFIX = "logging.level";
+		private static final String LOG_PREFIX = "logging.level.";
 		
 		private static final Logger LOG = LoggerFactory.getLogger(LoggerLevelRefresher.class);
 		
