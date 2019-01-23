@@ -1,7 +1,5 @@
 package org.flyonsky.boot.autoconfigure.cat;
 
-import java.util.Collections;
-
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,7 +30,7 @@ public class RestAutoConfigure {
 		 */
 		public void initCat() {
 			// 设置Cat 上下文拦截器
-			restTemplate.setInterceptors(Collections.singletonList(new CatRestInterceptor()));
+			restTemplate.getInterceptors().add(0, new CatRestInterceptor());
 		}
 	}
 }
