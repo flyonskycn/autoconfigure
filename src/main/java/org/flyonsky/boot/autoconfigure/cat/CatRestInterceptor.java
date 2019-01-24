@@ -31,7 +31,7 @@ public class CatRestInterceptor implements ClientHttpRequestInterceptor {
 			headers.add(CatConstantsExt.CAT_HTTP_HEADER_PARENT_MESSAGE_ID, ctx.getProperty(Cat.Context.PARENT));
 			headers.add(CatConstantsExt.CAT_HTTP_HEADER_CHILD_MESSAGE_ID, ctx.getProperty(Cat.Context.CHILD));
 
-			// 继承执行逻辑
+			// 继续执行逻辑
 			ClientHttpResponse response =  execution.execute(request, body);
 			t.setStatus(Transaction.SUCCESS);
 			return response;
