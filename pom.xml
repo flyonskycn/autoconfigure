@@ -21,7 +21,6 @@
   	<spring.cloud.version>2.0.2.RELEASE</spring.cloud.version>
   	<openfeign.version>9.7.0</openfeign.version>
   	<springfox.version>2.9.2</springfox.version>
-  	<lombok.version>1.16.18</lombok.version>
   </properties>
   
   <dependencies>
@@ -121,7 +120,7 @@
 	    <version>${openfeign.version}</version>
 	    <optional>true</optional>
 	</dependency>
-		<dependency>
+	<dependency>
 	    <groupId>io.springfox</groupId>
 	    <artifactId>springfox-swagger2</artifactId>
 	    <version>${springfox.version}</version>
@@ -137,12 +136,6 @@
         <groupId>io.springfox</groupId>
         <artifactId>springfox-bean-validators</artifactId>
         <version>${springfox.version}</version>
-        <optional>true</optional>
-    </dependency>
-    <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <version>${lombok.version}</version>
         <optional>true</optional>
     </dependency>
   </dependencies>
