@@ -20,20 +20,20 @@
   	<common.config.version>1.10</common.config.version>
   	<spring.cloud.version>2.0.2.RELEASE</spring.cloud.version>
   	<openfeign.version>9.7.0</openfeign.version>
+  	<springfox.version>2.9.2</springfox.version>
+  	<lombok.version>1.16.18</lombok.version>
   </properties>
   
   <dependencies>
   	<dependency>
  	  <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-autoconfigure</artifactId>
-      <scope>compile</scope>
       <version>${spring.boot.version}</version>
       <optional>true</optional>
   	</dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot</artifactId>
-      <scope>compile</scope>
       <version>${spring.boot.version}</version>
       <optional>true</optional>
     </dependency>
@@ -41,101 +41,110 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-autoconfigure-processor</artifactId>
       <version>${spring.boot.version}</version>
-      <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-configuration-processor</artifactId>
       <version>${spring.boot.version}</version>
-      <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
       <version>${spring.verison}</version>
-      <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>com.dianping.cat</groupId>
       <artifactId>cat-client</artifactId>
       <version>${cat.version}</version>
-      <scope>compile</scope>
       <optional>true</optional>
     </dependency>
 	<dependency>
 	    <groupId>javax.servlet</groupId>
 	    <artifactId>javax.servlet-api</artifactId>
 	    <version>${servlet.version}</version>
-	    <scope>compile</scope>
 	    <optional>true</optional>
 	</dependency>
 	<dependency>
 	    <groupId>org.slf4j</groupId>
 	    <artifactId>slf4j-log4j12</artifactId>
 	    <version>${slf4j.version}</version>
-	    <scope>compile</scope>
 	    <optional>true</optional>
 	</dependency>
     <dependency>
     	<groupId>org.springframework.boot</groupId>
     	<artifactId>spring-boot-starter-aop</artifactId>
     	<version>${spring.boot.version}</version>
-    	<scope>compile</scope>
       	<optional>true</optional>
     </dependency>
     <dependency>
     	<groupId>com.ctrip.framework.apollo</groupId>
     	<artifactId>apollo-client</artifactId>
     	<version>${apollo.version}</version>
-    	<scope>compile</scope>
       	<optional>true</optional>
     </dependency>
     <dependency>
     	<groupId>com.netflix.archaius</groupId>
     	<artifactId>archaius-core</artifactId>
     	<version>${archaius.version}</version>
-    	<scope>compile</scope>
       	<optional>true</optional>
     </dependency>
     <dependency>
 	    <groupId>org.apache.commons</groupId>
 	    <artifactId>commons-lang3</artifactId>
 	    <version>${commons.lang.version}</version>
-	    <scope>compile</scope>
 	    <optional>true</optional>
 	</dependency>
 	<dependency>
 	    <groupId>commons-configuration</groupId>
 	    <artifactId>commons-configuration</artifactId>
 	    <version>${common.config.version}</version>
-	    <scope>compile</scope>
 	    <optional>true</optional>
 	</dependency>
 	<dependency>
 		<groupId>org.springframework.cloud</groupId>
 		<artifactId>spring-cloud-context</artifactId>
 		<version>${spring.cloud.version}</version>
-	    <scope>compile</scope>
 	    <optional>true</optional>
 	</dependency>
 	<dependency>
 		<groupId>org.springframework.cloud</groupId>
 		<artifactId>spring-cloud-netflix-archaius</artifactId>
 		<version>${spring.cloud.version}</version>
-	    <scope>compile</scope>
 	    <optional>true</optional>
 	</dependency>
 	<dependency>
 	    <groupId>io.github.openfeign</groupId>
 	    <artifactId>feign-core</artifactId>
 	    <version>${openfeign.version}</version>
-   	    <scope>compile</scope>
 	    <optional>true</optional>
 	</dependency>
-	
+		<dependency>
+	    <groupId>io.springfox</groupId>
+	    <artifactId>springfox-swagger2</artifactId>
+	    <version>${springfox.version}</version>
+	    <optional>true</optional>
+	</dependency>
+	<dependency>
+		<groupId>io.springfox</groupId>
+		<artifactId>springfox-swagger-ui</artifactId>
+		<version>${springfox.version}</version>
+		<optional>true</optional>
+    </dependency>
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-bean-validators</artifactId>
+        <version>${springfox.version}</version>
+        <optional>true</optional>
+    </dependency>
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+        <optional>true</optional>
+    </dependency>
   </dependencies>
   
   <build>
