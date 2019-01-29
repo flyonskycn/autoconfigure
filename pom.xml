@@ -55,6 +55,12 @@
       <optional>true</optional>
     </dependency>
     <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.verison}</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
       <groupId>com.dianping.cat</groupId>
       <artifactId>cat-client</artifactId>
       <version>${cat.version}</version>

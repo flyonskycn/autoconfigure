@@ -15,7 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ConditionalOnClass({EnableSwagger2.class})
 @EnableConfigurationProperties({SwaggerProperties.class})
 @Configuration
-public class SwaggerAutoConfigure {
+public class SwaggerAutoConfigure{
 
     @Bean
     public Docket petApi(SwaggerProperties swagger) {
