@@ -21,6 +21,7 @@
   	<spring.cloud.version>2.0.2.RELEASE</spring.cloud.version>
   	<openfeign.version>9.7.0</openfeign.version>
   	<springfox.version>2.9.2</springfox.version>
+  	<hystrix.version>1.5.12</hystrix.version>
   </properties>
   
   <dependencies>
@@ -144,6 +145,11 @@
         <version>${springfox.version}</version>
         <optional>true</optional>
     </dependency>
+    <dependency>
+	    <groupId>com.netflix.hystrix</groupId>
+	    <artifactId>hystrix-core</artifactId>
+	    <version>${hystrix.version}</version>
+	</dependency>
   </dependencies>
   
   <build>

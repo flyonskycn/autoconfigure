@@ -6,6 +6,8 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -21,8 +23,11 @@ public class CatAspectAutoConfigure {
 	@Aspect
 	public static class CatAspect{
 		
+		private static final Logger LOG = LoggerFactory.getLogger(CatAspect.class);
+		
 		@Around(value = "@annotation(org.flyonsky.boot.autoconfigure.cat.CatAnnotation)")
 		public Object aroundMethod(ProceedingJoinPoint pjp) {
+			LOG.info("CatAspect initialize");
 			MethodSignature joinPointObject = (MethodSignature) pjp.getSignature();
 			Method method = joinPointObject.getMethod();
 			

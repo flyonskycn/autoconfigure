@@ -7,4 +7,5 @@ org.flyonsky.boot.autoconfigure.cat.CatAspectAutoConfigure,\
 org.flyonsky.boot.autoconfigure.apollo.archaius.ArchaiousAutoConfigure,\
 org.flyonsky.boot.autoconfigure.apollo.ApolloLoggerAutoConfigure,\
 org.flyonsky.boot.autoconfigure.cat.feign.CatFeignAutoConfigure,\
-org.flyonsky.boot.autoconfigure.swagger.SwaggerAutoConfigure
+org.flyonsky.boot.autoconfigure.swagger.SwaggerAutoConfigure,\
+org.flyonsky.boot.autoconfigure.cat.hystrix.CatHystrixAutoConfigure

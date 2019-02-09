@@ -2,6 +2,8 @@ package org.flyonsky.boot.autoconfigure.cat;
 
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;
@@ -15,10 +17,13 @@ import com.dianping.cat.message.Transaction;
 
 public class CatRestInterceptor implements ClientHttpRequestInterceptor {
 	
+	private static final Logger LOG = LoggerFactory.getLogger(CatRestInterceptor.class);
+	
 	@Override
 	public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
 			throws IOException {
 
+		LOG.info("Cat RestInterceptor initialize");
 		Transaction t = Cat.newTransaction(CatConstants.TYPE_CALL, request.getURI().toString());
 
 		try {

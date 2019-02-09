@@ -10,11 +10,16 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.dianping.cat.Cat;
 import com.dianping.cat.message.Message;
 import com.dianping.cat.message.Transaction;
 
 public class CatServletFilter implements Filter{
+	
+	private static final Logger LOG = LoggerFactory.getLogger(CatServletFilter.class);
 	
 	@Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -23,7 +28,7 @@ public class CatServletFilter implements Filter{
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-
+    	LOG.info("Cat Filter initialize");
         HttpServletRequest request = (HttpServletRequest) servletRequest;
 
         String uri = request.getRequestURI();
