@@ -41,12 +41,22 @@ public class ApolloProperties {
 		
 		private String namespaces;
 
+		private boolean enabled;
+		
 		public String getNamespaces() {
 			return namespaces;
 		}
 
 		public void setNamespaces(String namespaces) {
 			this.namespaces = namespaces;
+		}
+
+		public boolean isEnabled() {
+			return enabled;
+		}
+
+		public void setEnabled(boolean enabled) {
+			this.enabled = enabled;
 		}
 		
 	}
