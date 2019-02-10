@@ -22,6 +22,7 @@
   	<openfeign.version>9.7.0</openfeign.version>
   	<springfox.version>2.9.2</springfox.version>
   	<hystrix.version>1.5.12</hystrix.version>
+  	<xxl.version>2.0.1</xxl.version>
   </properties>
   
   <dependencies>
@@ -150,6 +151,12 @@
 	    <artifactId>hystrix-core</artifactId>
 	    <version>${hystrix.version}</version>
 	</dependency>
+    <dependency>
+        <groupId>com.xuxueli</groupId>
+        <artifactId>xxl-job-core</artifactId>
+        <version>${xxl.version}</version>
+        <optional>true</optional>
+    </dependency>
   </dependencies>
   
   <build>
