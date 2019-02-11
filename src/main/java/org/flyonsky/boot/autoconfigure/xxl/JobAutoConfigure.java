@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.xxl.job.core.executor.XxlJobExecutor;
+import com.xxl.job.core.executor.impl.XxlJobSpringExecutor;
 
 @ConditionalOnProperty(value=JobConstants.ENABLED, matchIfMissing=false)
 @EnableConfigurationProperties({JobProperties.class})
@@ -19,7 +20,7 @@ public class JobAutoConfigure {
     @Bean(initMethod = "start", destroyMethod = "destroy")
     public XxlJobExecutor xxlJobExecutor(JobProperties jobProperties) {
     	LOG.info(">>>>>>>>>>> xxl-job init.");
-        XxlJobExecutor xxlJobExecutor = new XxlJobExecutor();
+        XxlJobExecutor xxlJobExecutor = new XxlJobSpringExecutor();
         xxlJobExecutor.setAdminAddresses(jobProperties.getAdmin().getAddresses());
         xxlJobExecutor.setAppName(jobProperties.getExecutor().getAppname());
         xxlJobExecutor.setIp(jobProperties.getExecutor().getIp());
