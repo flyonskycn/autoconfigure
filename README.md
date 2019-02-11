@@ -11,10 +11,17 @@
 3. 支持RestTemplate埋点；
 4. 支持Web的Filter埋点；
 5. 支持对方法的AOP埋点，只需在方法上增加CatAnnotation即可。
+> [样例参见](https://github.com/flyonskycn/micro-service-study/tree/master/timeclient)
 
 ### apollo
 1. 支持客户端以archaius的方式使用配置项。
 2. 支持动态修改日志级别。
+> [样例参见](https://github.com/flyonskycn/micro-service-study/tree/master/apollotimeserver)
 
 ### swagger 
 1. 方便项目引入swagger的文档功能。
+> [样例参见](https://github.com/flyonskycn/micro-service-study/tree/master/swaggerdemo)
+
+### xxl-job
+1. 方便引入xxl-job,以提供分布式调度执行器。
+> [样例参见](https://github.com/flyonskycn/micro-service-study/tree/master/jobdemo)
